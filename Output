@@ -1,0 +1,23 @@
+================================
+     VEHICLE MANAGEMENT SYSTEM
+================================
+
+Toyota engine is starting...
+Vehicle: Car
+Brand: Toyota
+Doors: 4
+----------------------
+Honda engine is starting...
+Vehicle: Motorcycle
+Brand: Honda
+Has Sidecar: false
+----------------------
+
+===== VEHICLE SERVICE CENTER =====
+Welcome to Rafael's Vehicle Service Center!
+Performing maintenance on Toyota Car...
+Toyota Car maintenance completed!
+Performing maintenance on Honda Motorcycle...
+Honda Motorcycle maintenance completed!
+
+Program finished successfully!
