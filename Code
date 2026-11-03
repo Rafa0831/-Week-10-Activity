@@ -1,0 +1,89 @@
+// PC16 - Week 10: Object-Oriented Programming in Dart
+// Name: Rafael S. Ebrada
+// Section: BSIT 2.1
+
+abstract class Vehicle {
+  String brand;
+
+  Vehicle(this.brand);
+
+  void startEngine() {
+    print("$brand engine is starting...");
+  }
+
+
+  void showDetails();
+}
+
+
+class Car extends Vehicle {
+  int doors;
+
+  Car(String brand, this.doors) : super(brand);
+
+  @override
+  void showDetails() {
+    print("Vehicle: Car");
+    print("Brand: $brand");
+    print("Doors: $doors");
+    print("----------------------");
+  }
+}
+
+
+class Motorcycle extends Vehicle {
+  bool hasSidecar;
+
+  Motorcycle(String brand, this.hasSidecar) : super(brand);
+
+  @override
+  void showDetails() {
+    print("Vehicle: Motorcycle");
+    print("Brand: $brand");
+    print("Has Sidecar: $hasSidecar");
+    print("----------------------");
+  }
+}
+
+
+mixin MaintenanceMixin {
+  void performMaintenance(String vehicleName) {
+    print("Performing maintenance on $vehicleName...");
+    print("$vehicleName maintenance completed!");
+  }
+}
+
+
+class ServiceCenter with MaintenanceMixin {
+  void showCenterInfo() {
+    print("\n===== VEHICLE SERVICE CENTER =====");
+    print("Welcome to Rafael's Vehicle Service Center!");
+  }
+}
+
+
+void main() {
+  print("================================");
+  print("     VEHICLE MANAGEMENT SYSTEM");
+  print("================================\n");
+
+  
+  List<Vehicle> vehicles = [
+    Car("Toyota", 4),
+    Motorcycle("Honda", false),
+  ];
+
+  for (Vehicle vehicle in vehicles) {
+    vehicle.startEngine();
+    vehicle.showDetails();
+  }
+
+  
+  ServiceCenter center = ServiceCenter();
+
+  center.showCenterInfo();
+  center.performMaintenance("Toyota Car");
+  center.performMaintenance("Honda Motorcycle");
+
+  print("\nProgram finished successfully!");
+}
